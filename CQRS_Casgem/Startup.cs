@@ -1,3 +1,5 @@
+using CQRS_Casgem.CQRSPatern.Handlers;
+using CQRS_Casgem.DAL;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -23,6 +25,15 @@ namespace CQRS_Casgem
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
+            services.AddDbContext<Context>();
+            services.AddScoped<GetProductQueryHandler>();
+            services.AddScoped<CreateProductCommandHandler>();
+            services.AddScoped<RemoveProductCommandHandler>();
+            services.AddScoped<GetProductGetByIdQueryHandler>();
+
+            services.AddScoped<GetProductUpdateByIdQueryHandler>();
+            services.AddScoped<UpdateProductCommandHandler>();
 
             services.AddControllersWithViews();
         }

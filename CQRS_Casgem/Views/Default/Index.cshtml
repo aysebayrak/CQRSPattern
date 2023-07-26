@@ -3,11 +3,6 @@
 @{
     Layout = null;
 }
-
-
-
-
-
 <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
 
 <div class="container">
@@ -22,6 +17,7 @@
             <th>Fiyat</th>
             <th>Sil</th>
             <th>Güncelle</th>
+            <th>Getir</th>
         </tr>
         @foreach(var item in Model)
         {
@@ -34,6 +30,7 @@
                 <td>@item.Stock</td>
                 <td><a href="/Default/DeleteProduct/@item.ProductID" class="btn btn-danger">Sil</a></td>
                 <td><a href="/Default/UpdateProduct/@item.ProductID" class="btn btn-primary">Güncelle</a></td>
+                <td><a href="/Default/GetPRoduct/@item.ProductID" class="btn btn-warning">Getir</a></td>
             </tr>
         }
     </table>

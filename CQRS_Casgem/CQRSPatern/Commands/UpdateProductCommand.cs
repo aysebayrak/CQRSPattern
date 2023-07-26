@@ -1,7 +1,9 @@
 ﻿namespace CQRS_Casgem.CQRSPatern.Commands
 {
-    public class CreateProductCommand
+
+    public class UpdateProductCommand
     {
+        public int ProductID { get; set; }
         public string Name { get; set; }
         public string Price { get; set; }
         public string Brand { get; set; }

@@ -8,10 +8,12 @@ namespace CQRS_Casgem.CQRSPatern.Handlers
     public class GetProductQueryHandler
     {
         private readonly Context _context;
+
         public GetProductQueryHandler(Context context)
         {
             _context = context;
         }
+
         public List<GetProductQueryResult> Handle()
         {
             var values = _context.Products.Select(x => new GetProductQueryResult
@@ -21,8 +23,9 @@ namespace CQRS_Casgem.CQRSPatern.Handlers
                 Name = x.Name,
                 Price = x.Price,
                 ProductID = x.ProductID,
-                Stock = x.Stock
+                Stock = x.Stock,
             }).ToList();
+
             return values;
         }
     }
